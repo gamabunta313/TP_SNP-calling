@@ -1,0 +1,12 @@
+REF=/path/to/genome.fa
+FREEBAYES=/path/to/freebayes_1.3.2-40
+snpEFFdir=/path/to/snpEff_07.19
+BED=/path/to/amplicon-regions.bed
+loci=/path/to/TP-53_loci.txt
+GATK=/path/to/GenomeAnalysisTK_3.8.jar
+samtools=/path/to/samtools_1.19
+bcftools=/path/to/bcftools_1.9-115
+Rscripts=/path/to/R_scripts
+IARC=/path/to/IARC_Database.tab
+DB_C_OLD=/path/to/COUNT_Database
+DB_V_OLD=/path/to/VAF_Database
