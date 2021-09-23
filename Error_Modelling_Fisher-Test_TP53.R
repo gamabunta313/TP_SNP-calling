@@ -53,12 +53,8 @@ for (i in 1:nrow(mutations)){
     } 
     }}
 
-for (i in 1:nrow(mutations)){
-  p_values<-replicate(1000,{ fisher.test(matrix(as.numeric(c(tabella_fisher[i,12],tabella_fisher[i,13],tabella_fisher[i,6],tabella_fisher[i,7])),nrow=2,ncol=2,byrow=TRUE))$p.value})
-  tabella_fisher[i,14]<-paste(mean(p_values))
-  tabella_fisher[i,15]<-paste(mean(p.adjust(p_values,method="bonferroni")))}
 for ( i in 1:nrow(mutations)){if(as.numeric(tabella_fisher[i,15])>0.01){tabella_fisher[i,16]=paste("NS")}else{tabella_fisher[i,16]=paste("S")}}
-colnames(tabella_fisher)=c("Sample_Name","ChR","POS","REF","ALT","RO","AO","TYPE","AA_CHANGE","Effect","VAF","REF-Mean","ALT-Mean","Fisher_Exact_Test","Bonferroni_Correction","Significance")
+colnames(tabella_fisher)=c("Sample_Name","ChR","POS","REF","ALT","RO","AO","TYPE","AA_CHANGE","Effect","VAF","REF-Mean","ALT-Mean","Fisher_Exact_Test")
 write.table(tabella_fisher,"Fisher_Exact_Test.tab",sep="\t",row.names=FALSE)
  
 
